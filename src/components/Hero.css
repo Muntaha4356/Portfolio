@@ -1,0 +1,67 @@
+/* components/Hero.css */
+
+.Hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  background-color: #0d0d0d; /* dark background */
+  min-height: 100vh;
+  gap: 4rem;
+}
+
+.photos {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #2b2b2b;
+  box-shadow: 0 0 30px rgba(128, 90, 213, 0.5); /* purple glow */
+  transition: transform 0.3s ease;
+}
+
+.photos:hover {
+  transform: scale(1.05);
+}
+
+.Introsection {
+  color: white;
+  max-width: 600px;
+}
+
+#introhead {
+  font-size: 4rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#intro {
+  font-size: 1.2rem;
+  font-family: 'Hind Madurai', sans-serif;
+  line-height: 1.8;
+  color: #ccc;
+  letter-spacing: 0.05em;
+}
+.learn-button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(to right, #7b61ff, #9d4edd);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat Alternates', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(123, 97, 255, 0.3);
+}
+
+.learn-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(123, 97, 255, 0.5);
+}
+
