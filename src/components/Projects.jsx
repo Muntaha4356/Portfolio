@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';  // from Firebase SDK
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';  // from Firebase SDK
 import { db } from '../config/firebase';  // your firebase config file
 import './Projects.css';
 function Projects() {
@@ -9,8 +9,12 @@ function Projects() {
   useEffect(() => {
     async function fetchProjects() {
       try {
+        
         const projectsCol = collection(db, 'projects');
-        const projectsSnapshot = await getDocs(projectsCol);
+        const q = query(projectsCol, orderBy('Order')); 
+
+
+        const projectsSnapshot = await getDocs(q);
         const projectsList = projectsSnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
@@ -26,16 +30,20 @@ function Projects() {
     fetchProjects();
   }, []);
 
-  if (loading) return <p>Loading projects...</p>;
+  if (loading) return <p className='loading'>Loading projects...</p>;
 
   return (
-    <div>
-      <h2>My Projects</h2>
+    <div className='projects-container'>
+      <h2>Featured Projects</h2>
+      <p className="projecthead">Find out about my work and check the projects I built</p>
       <div className="projects-grid">
-        {projects.map(({ id, Name, Description, Image, Stack, githublink }) => (
+        {projects.map(({ id, Name, Subtitle, Description, Image, Stack, githublink }) => (
           <div key={id} className="project-card">
             <img src={Image} alt={Name} />
-            <h3>{Name}</h3>
+            <h3>
+              <span>{Subtitle}</span>
+              {Name}
+            </h3>
             <p>{Description}</p>
             <p><strong>Tech Stack:</strong> {Stack}</p>
             {githublink && (
