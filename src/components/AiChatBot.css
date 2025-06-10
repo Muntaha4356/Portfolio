@@ -1,0 +1,17 @@
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 16px 24px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.chat-history { flex: 1; overflow-y: auto; padding: 8px; }
+.msg.user { text-align: right; color: #333; }
+.msg.assistant { text-align: left; color: #0066cc; }
+.chat-input { display: flex; }
+.chat-input input { flex: 1; padding: 8px; }
+.chat-input button { padding: 8px 16px; }
