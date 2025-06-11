@@ -32,6 +32,7 @@ const Skills = () => {
   };
 
   return (
+    <section id="skills">
     <div className="skills-container">
       <h2 className="skills-heading">My Skills</h2>
       <DragDropContext onDragEnd={handleDragEnd}>
@@ -62,6 +63,7 @@ const Skills = () => {
         </Droppable>
       </DragDropContext>
     </div>
+    </section>
   );
 };
 

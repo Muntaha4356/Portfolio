@@ -3,6 +3,7 @@ import heroImage from '../assets/muntaha.jpg';
 import './Hero.css';
 const Hero = () => {
   return (
+    <section id="about">
     <div className="Hero container">
 
         <img className="photos" id="profile" src={heroImage} alt="Hero" />
@@ -14,6 +15,7 @@ const Hero = () => {
         
         
     </div>
+    </section>
   )
 }
 

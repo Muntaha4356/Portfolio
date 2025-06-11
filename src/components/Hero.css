@@ -7,7 +7,6 @@
   justify-content: center;
   padding: 6rem 2rem;
   background-color: #0d0d0d; /* dark background */
-  min-height: 100vh;
   gap: 4rem;
 }
 

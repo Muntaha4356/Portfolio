@@ -1,0 +1,32 @@
+.custom-footer {
+  background-color: #0f0f0f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-left a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Make icon white if original is colored */
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer-icon:hover {
+  transform: scale(1.1);
+}
+
+.footer-right {
+  text-align: right;
+  color: #d1d1d1;
+}

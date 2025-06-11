@@ -33,6 +33,7 @@ function Projects() {
   if (loading) return <p className='loading'>Loading projects...</p>;
 
   return (
+    <section id="projects">
     <div className='projects-container'>
       <h2>Featured Projects</h2>
       <p className="projecthead">Find out about my work and check the projects I built</p>
@@ -55,6 +56,7 @@ function Projects() {
         ))}
       </div>
     </div>
+    </section>
   );
 }
 
