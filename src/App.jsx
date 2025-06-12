@@ -9,14 +9,14 @@ import Header from './components/Header'
 function App() {
 
   return (
-    <>
+    <div className='total_body'>
       <Header/>
       <Hero/>
       <Projects/>
       <Skills/>
       <Contact/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

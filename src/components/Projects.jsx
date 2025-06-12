@@ -41,6 +41,17 @@ function Projects() {
         {projects.map(({ id, Name, Subtitle, Description, Image, Stack, githublink }) => (
           <div key={id} className="project-card">
             <img src={Image} alt={Name} />
+            {/*<div className="video-wrapper">*/}
+                {/*<iframe
+                  width="100%"
+                  height="200"
+                  src={Image.replace("watch?v=", "embed/")}
+                  title={Name}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>*/}
+              {/*</div>*/}
             <h3>
               <span>{Subtitle}</span>
               {Name}

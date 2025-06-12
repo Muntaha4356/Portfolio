@@ -10,12 +10,8 @@
   margin-bottom: 1rem;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
   font-weight: 600;
-  color: #161212; /* Optional: makes the shadow stand out more on dark bg */
+  color: #f4f4f8; /* Optional: makes the shadow stand out more on dark bg */
 
-  text-shadow:
-    2px 2px 4px rgba(0, 0, 0, 0.6),   /* dark base shadow */
-    4px 4px 8px rgba(0, 0, 0, 0.3),   /* outer bold glow */
-    -1px -1px 2px rgba(255, 255, 255, 0.2); /* subtle highlight */
 }
 
 
@@ -29,8 +25,10 @@
 
 .skill-card {
     padding: 0.75rem 1rem;
-    background-color: #f4f4f8;
-
+    color: #f4f4f8;
+    font-size: 1rem;
+  background-color: #333;
+  text-align: center;
     font-family: "Poppins", "Poppins Placeholder", sans-serif;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -41,5 +39,5 @@
 
 .skill-card:hover {
   transform: scale(1.05);
-  background-color: #e9e9ff;
+  background-color: #333333ec;;
 }

@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo" onClick={() => scrollToSection('about')}>
-        My Resume
+        Sidra tul Muntaha
       </div>
       <nav className="nav-links">
         <button onClick={() => scrollToSection('about')}>About Me</button>

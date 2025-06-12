@@ -1,1 +1,8 @@
-
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.total_body{
+    background-color: #0d0d0d;
+}
