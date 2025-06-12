@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './Skills.css';
 
 const Skills = () => {
@@ -21,48 +20,43 @@ const Skills = () => {
     fetchSkills();
   }, []);
 
-  const handleDragEnd = (result) => {
-    if (!result.destination) return;
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData("dragIndex", index);
+  };
 
-    const items = Array.from(skills);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
+  const handleDrop = (e, dropIndex) => {
+    const dragIndex = e.dataTransfer.getData("dragIndex");
+    if (dragIndex === null) return;
 
-    setSkills(items);
+    const updatedSkills = [...skills];
+    const [draggedItem] = updatedSkills.splice(dragIndex, 1);
+    updatedSkills.splice(dropIndex, 0, draggedItem);
+    setSkills(updatedSkills);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
   };
 
   return (
     <section id="skills">
-    <div className="skills-container">
-      <h2 className="skills-heading">My Skills</h2>
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="skills">
-          {(provided) => (
-            <ul
-              className="skills-list"
-              {...provided.droppableProps}
-              ref={provided.innerRef}
+      <div className="skills-container">
+        <h2 className="skills-heading">My Skills</h2>
+        <ul className="skills-list">
+          {skills.map((skill, index) => (
+            <li
+              key={skill.id}
+              className="skill-card"
+              draggable
+              onDragStart={(e) => handleDragStart(e, index)}
+              onDragOver={handleDragOver}
+              onDrop={(e) => handleDrop(e, index)}
             >
-              {skills.map((skill, index) => (
-                <Draggable key={skill.id} draggableId={skill.id} index={index}>
-                  {(provided) => (
-                    <li
-                      className="skill-card"
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      {skill.name}
-                    </li>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </ul>
-          )}
-        </Droppable>
-      </DragDropContext>
-    </div>
+              {skill.name}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };
