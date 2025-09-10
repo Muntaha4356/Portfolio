@@ -26,10 +26,7 @@ function Contact() {
               <p>https://github.com/Muntaha4356</p>
             </div>
 
-            <div>
-              <h4>Mobile no.</h4>
-              <p>+923278042382</p>
-            </div>
+            
           </div>
         </div>
         <div className="contact-image">
