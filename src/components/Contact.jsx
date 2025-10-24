@@ -41,8 +41,4 @@ function Contact() {
 
 export default Contact;
 
-    </section>
-  );
-}
 
-export default Contact;
