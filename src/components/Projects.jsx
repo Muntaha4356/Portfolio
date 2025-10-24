@@ -72,8 +72,3 @@ function Projects() {
 }
 
 export default Projects;
-    </section>
-  );
-}
-
-export default Projects;
