@@ -26,7 +26,7 @@ function Contact() {
               <p>https://github.com/Muntaha4356</p>
             </div>
 
-          
+            
           </div>
         </div>
         <div className="contact-image">
