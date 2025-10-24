@@ -1,4 +1,3 @@
-/* components/Hero.css */
 
 .Hero {
   display: flex;
@@ -8,6 +7,11 @@
   padding: 6rem 2rem;
   background-color: #0d0d0d; /* dark background */
   gap: 4rem;
+}
+@media(max-width: 600px){
+  .Hero{
+    flex-direction: column;
+  }
 }
 
 .photos {
@@ -26,7 +30,6 @@
 
 .Introsection {
   color: white;
-  max-width: 600px;
 }
 
 #introhead {
@@ -58,6 +61,12 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(123, 97, 255, 0.3);
 }
+
+.learn-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(123, 97, 255, 0.5);
+}
+
 
 .learn-button:hover {
   transform: translateY(-3px);
